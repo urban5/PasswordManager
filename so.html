@@ -1,0 +1,53 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<table class="tab">
+
+
+  <tr>
+    <td><button class="button">Click</button></td>
+    <td><button class="button">Click</button></td>
+    <td><button class="button">Click</button></td>
+    <td><button class="button">Click</button></td>
+
+    <td><button class="button">Click</button></td>
+
+    <td><button class="button">Click</button></td>
+
+  </tr>
+
+  <tr>
+    <td><button class="button">Click</button></td>
+    <td><button class="button">Click</button></td>
+    <td><button class="button">Click</button></td>
+    <td><button class="button">Click</button></td>
+
+    <td><button class="button">Click</button></td>
+
+    <td><button class="button">Click</button></td>
+
+  </tr>
+</table>
+
+<script>
+
+$("table").on('click', 'button', function(e) {
+  var rowIndex = $(this).closest('tr').index();
+  //var colIndex = $(this).closest('td').index()
+  //console.log(`Row index is ${rowIndex} & button index is ${colIndex}`)
+  console.log(`Row index is ${rowIndex}`)
+});
+
+let jsonData = '{"Friends":[{"website":"test.com","username":"test","pass_enc":"test","date":"2023-01-11"},{"website":"postman23.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"urbantest.com","username":"urbantest","pass_enc":"geslo123","date":"10-10-2020"},{"website":"stran.si","username":"demo123","pass_enc":"demo321","date":"10-10-2020"},{"website":"konzultacija2.si","username":"urban555","pass_enc":"geslo123","date":"10-10-2020"},{"website":"torek.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"torek.com","username":"probavam2","pass_enc":"geslo123","date":""},{"website":"torek2.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"torek3.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"torek5.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"torek6.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"torek7.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"nedelja1.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"nedelja3.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"nedelja3.com","username":"probavam2","pass_enc":"geslo123","date":"10-10-2020"},{"website":"P10.com","username":"P10","pass_enc":"geslo123","date":"10-10-2020"},{"website":"P10.com","username":"P10","pass_enc":"geslo123","date":"10-10-2020"},{"website":"f16","username":"f16","pass_enc":"f16","date":"15-01-2023"},{"website":"drugogesloizforme.si","username":"user12","pass_enc":"user12","date":"15-01-2023"},{"website":"demonstracija.si","username":"urban123","pass_enc":"geslo123","date":"15-01-2023"}]}';
+
+function getCredentials(jsonString, index) {
+  let jsonData = JSON.parse(jsonString);
+  let website = jsonData.Friends[index].website;
+  let username = jsonData.Friends[index].username;
+  let pass_enc = jsonData.Friends[index].pass_enc;
+  return { website, username, pass_enc };
+  console.log({ website, username, pass_enc });
+}
+
+a, b, c = getCredentials(jsonData, 0);
+document.write(a, b, c)
+
+</script>

@@ -1,0 +1,67 @@
+.table-container {
+    position: absolute;
+    margin-top: 10px;
+    align-self: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the table container */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 10px solid transparent; /* Add a border around the table */
+    transition: border-color 0.2s ease; /* Make the border color change dynamically */
+  }
+  
+  table {
+    max-width: 600px; /* Change this value to adjust the width */
+    margin: 0; /* Remove the margin to align the table with the border */
+    border-collapse: collapse;
+  }
+  
+  
+  td {
+    vertical-align: top;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    text-align: center; /* Center the text in the cells */
+  }
+  
+  tr:first-child td {
+    border-top: 0;
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    font-family: 'Montserrat', sans-serif; /* Change the font for the head row */
+  }
+  
+  .circle-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+  }
+  
+  .circle-indicator.red {
+    background-color: #f44336;
+  }
+  
+  .circle-indicator.green {
+    background-color: #4caf50;
+  }
+  
+  button {
+    border: none;
+    background-color: transparent;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+    border-radius: 3px;
+    padding: 6px 10px;
+    margin-left: 10px;
+  }
+
